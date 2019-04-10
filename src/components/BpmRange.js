@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./BpmRange.css";
 
 class BpmRange extends Component {
 	constructor(props){

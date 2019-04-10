@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BpmRange from '../components/BpmRange.js';
 import BpmDisplay from '../components/BpmDisplay.js';
 import AudioControls from '../components/AudioControls.js';
+import './Metronome.css';
 
 class Metronome extends Component {
 	constructor(props){

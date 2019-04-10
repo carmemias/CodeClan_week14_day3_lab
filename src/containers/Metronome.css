@@ -1,0 +1,9 @@
+.metronome {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+width: 50%;
+margin: 100px auto;
+border: 1px solid #ccc;
+padding: 50px;
+}

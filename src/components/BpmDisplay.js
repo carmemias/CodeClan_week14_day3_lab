@@ -1,4 +1,5 @@
 import React from 'react';
+import './BpmDisplay.css';
 
 const BpmDisplay = (props) => {
 	return(
