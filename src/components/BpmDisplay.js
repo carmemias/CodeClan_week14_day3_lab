@@ -4,7 +4,7 @@ import './BpmDisplay.css';
 const BpmDisplay = (props) => {
 	return(
 		<div className="bpm-display">
-		{props.bpm} BPM
+		<span className="value">{props.bpm}</span> BPM
 		</div>
 	);
 }
