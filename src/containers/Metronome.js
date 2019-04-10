@@ -12,10 +12,12 @@ class Metronome extends Component {
 		}
 
 		this.showBpmChange = this.showBpmChange.bind(this);
+
 	}
 
 	showBpmChange(newBpm){
 		this.setState({bpm: newBpm});
+		this.setState( { delay: Math.floor(60000/newBpm) } );
 	}
 
 	render(){

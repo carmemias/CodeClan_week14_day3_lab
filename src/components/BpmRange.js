@@ -12,6 +12,7 @@ class BpmRange extends Component {
 	handleRangeChange(event){
 		event.preventDefault();
 		this.setState({bpm: event.target.value});
+		this.props.showBpmChange(event.target.value);
 	}
 
 	render(){
