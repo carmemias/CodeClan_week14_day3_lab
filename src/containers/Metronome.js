@@ -25,7 +25,7 @@ class Metronome extends Component {
 		return (
 			<div className="metronome">
 			<BpmDisplay bpm={this.state.bpm}/>
-			<AudioControls/>
+			<AudioControls delay={this.state.delay}/>
 			<BpmRange bpm={this.state.bpm} showBpmChange={this.showBpmChange}/>
 			</div>
 		);
