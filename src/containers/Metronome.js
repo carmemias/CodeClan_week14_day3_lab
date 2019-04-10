@@ -13,12 +13,29 @@ class Metronome extends Component {
 		}
 
 		this.showBpmChange = this.showBpmChange.bind(this);
-
+		this.changeBackgroundColor = this.changeBackgroundColor.bind();
 	}
 
 	showBpmChange(newBpm){
 		this.setState({bpm: newBpm});
 		this.setState( { delay: Math.floor(60000/newBpm) } );
+
+		this.changeBackgroundColor(newBpm);
+	}
+
+	changeBackgroundColor(redLevel){
+		let newRGB = "rgb( " + redLevel + ", 210, 113)";
+		let playBtn = document.querySelector('.audio-control');
+		playBtn.style.backgroundColor = newRGB;
+
+		let addBtn = document.querySelector('.add-one');
+		addBtn.style.color = newRGB;
+
+		let takeOffBtn = document.querySelector('.take-off-one');
+		takeOffBtn.style.color = newRGB;
+
+		// let sliderThumb = document.querySelector('input[type=range]');
+		// sliderThumb.pseudoStyle("::-webkit-slider-thumb", "backgroundColor", newRGB);
 	}
 
 	render(){
