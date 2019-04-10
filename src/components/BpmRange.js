@@ -31,7 +31,7 @@ class BpmRange extends Component {
 	addOne(event){
 		event.preventDefault();
 		let currentBPM = this.props.bpm;
-		if(currentBPM < 2018){
+		if(currentBPM < 218){
 			this.setState({bpm: currentBPM + 1});
 			this.props.showBpmChange(currentBPM + 1);
 		}
