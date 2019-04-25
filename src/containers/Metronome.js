@@ -33,9 +33,6 @@ class Metronome extends Component {
 
 		let takeOffBtn = document.querySelector('.take-off-one');
 		takeOffBtn.style.color = newRGB;
-
-		// let sliderThumb = document.querySelector('input[type=range]');
-		// sliderThumb.pseudoStyle("::-webkit-slider-thumb", "backgroundColor", newRGB);
 	}
 
 	render(){
