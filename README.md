@@ -1,8 +1,11 @@
 # Metronome
 
-Metronome React app mimicking the [Google metronome](https://www.google.co.uk/search?q=metronome&oq=metronome&aqs=chrome..69i57j0l5.1319j0j1&sourceid=chrome&ie=UTF-8).
+Metronome React app exercise mimicking the [Google metronome](https://www.google.co.uk/search?q=metronome&oq=metronome&aqs=chrome..69i57j0l5.1319j0j1&sourceid=chrome&ie=UTF-8).
 
 ![Screenshot](./Screenshot.png)
+__Screenshot of the React Metronome app__
+
+The live version can be found on [Heroku](https://react-metronome-apr19.herokuapp.com/).
 
 The Play/Pause button starts/stops the metronome.
 The slider and the plus and minus buttons change the Bits Per Minute value.
