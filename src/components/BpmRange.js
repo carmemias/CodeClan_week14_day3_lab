@@ -2,14 +2,13 @@ import React from 'react';
 import "./BpmRange.css";
 
 function BpmRange(props){
-	const {bpm, setBpm, showBpmChange} = props;
+	const {bpm, setBpm} = props;
 
 	function takeOffOne(event){
 		event.preventDefault();
 		let currentBPM = bpm;
 		if(currentBPM > 40){
 			setBpm(currentBPM - 1);
-			showBpmChange(currentBPM - 1);
 		}
 	}
 
@@ -18,7 +17,6 @@ function BpmRange(props){
 		let currentBPM = bpm;
 		if(currentBPM < 218){
 			setBpm(currentBPM + 1);
-			showBpmChange(currentBPM + 1);
 		}
 	}
 
@@ -26,7 +24,6 @@ function BpmRange(props){
 		event.preventDefault();
 		let newBpm = parseInt(event.target.value);
 		setBpm(newBpm);
-		showBpmChange(newBpm);
 	}
 
 	return (

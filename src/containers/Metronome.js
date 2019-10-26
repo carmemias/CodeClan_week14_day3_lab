@@ -6,8 +6,6 @@ import './Metronome.css';
 
 function Metronome(){
 	const [bpm, setBpm] = useState(40);
-	//TODO delay does not need to be a separate state
-	const [delay, setDelay] = useState(1500);
 
 	useEffect(()=>{
 		let newRGB = "rgb( " + bpm + ", 210, 113)";
@@ -21,19 +19,13 @@ function Metronome(){
 		takeOffBtn.style.color = newRGB;
 	});
 
-	function showBpmChange(newBpm){
-		let newDelay = Math.floor(60000/newBpm);
-		setBpm(newBpm);
-		setDelay(newDelay);
-	}
-
 	return (
-				<div className="metronome">
-				<BpmDisplay bpm={bpm}/>
-				<AudioControls delay={delay}/>
-				<BpmRange bpm={bpm} setBpm={setBpm} showBpmChange={showBpmChange}/>
-				</div>
-			);
+		<div className="metronome">
+		<BpmDisplay bpm={bpm}/>
+		<AudioControls delay={Math.floor(60000/bpm)}/>
+		<BpmRange bpm={bpm} setBpm={setBpm}/>
+		</div>
+	);
 }
 
 export default Metronome;
