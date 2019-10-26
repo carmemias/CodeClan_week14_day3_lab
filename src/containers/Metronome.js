@@ -1,30 +1,16 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import BpmRange from '../components/BpmRange.js';
 import BpmDisplay from '../components/BpmDisplay.js';
 import AudioControls from '../components/AudioControls.js';
 import './Metronome.css';
 
-class Metronome extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			bpm: 40,
-			delay: 1500
-		}
+function Metronome(){
+	const [bpm, setBpm] = useState(40);
+	//TODO delay does not need to be a separate state
+	const [delay, setDelay] = useState(1500);
 
-		this.showBpmChange = this.showBpmChange.bind(this);
-		this.changeBackgroundColor = this.changeBackgroundColor.bind();
-	}
-
-	showBpmChange(newBpm){
-		this.setState({bpm: newBpm});
-		this.setState( { delay: Math.floor(60000/newBpm) } );
-
-		this.changeBackgroundColor(newBpm);
-	}
-
-	changeBackgroundColor(redLevel){
-		let newRGB = "rgb( " + redLevel + ", 210, 113)";
+	useEffect(()=>{
+		let newRGB = "rgb( " + bpm + ", 210, 113)";
 		let playBtn = document.querySelector('.audio-control');
 		playBtn.style.backgroundColor = newRGB;
 
@@ -33,17 +19,21 @@ class Metronome extends Component {
 
 		let takeOffBtn = document.querySelector('.take-off-one');
 		takeOffBtn.style.color = newRGB;
+	});
+
+	function showBpmChange(newBpm){
+		let newDelay = Math.floor(60000/newBpm);
+		setBpm(newBpm);
+		setDelay(newDelay);
 	}
 
-	render(){
-		return (
-			<div className="metronome">
-			<BpmDisplay bpm={this.state.bpm}/>
-			<AudioControls delay={this.state.delay}/>
-			<BpmRange bpm={this.state.bpm} showBpmChange={this.showBpmChange}/>
-			</div>
-		);
-	}
+	return (
+				<div className="metronome">
+				<BpmDisplay bpm={bpm}/>
+				<AudioControls delay={delay}/>
+				<BpmRange bpm={bpm} setBpm={setBpm} showBpmChange={showBpmChange}/>
+				</div>
+			);
 }
 
 export default Metronome;

@@ -2,6 +2,8 @@
 
 Metronome React app exercise mimicking the [Google metronome](https://www.google.co.uk/search?q=metronome&oq=metronome&aqs=chrome..69i57j0l5.1319j0j1&sourceid=chrome&ie=UTF-8).
 
+This branch uses React with hooks.
+
 ![Screenshot](./Screenshot.png)
 __Screenshot of the React Metronome app__
 
